@@ -1,87 +1,64 @@
+<script setup>
+
+</script>
+
 <template>
-  <div class="item">
-    <i>
-      <slot name="icon"></slot>
-    </i>
-    <div class="details">
-      <h3>
-        <slot name="heading"></slot>
-      </h3>
-      <slot></slot>
-    </div>
-  </div>
+  <footer>
+   <div id="footeritem">
+            <a target="_blank" href="https://fr.linkedin.com/">
+                <img src="./icons/linkedin.png" alt="linkedin">
+            </a>
+            <a target="_blank" href="https://fr-fr.facebook.com/reg/">
+                <img src="./icons/facebook.png" alt="facebook">
+            </a>
+            <a target="_blank" href="https://github.com/">
+                <img src="./icons/github.png" alt="github">
+            </a>
+        </div>
+        <p><small>Mise à jour du site le <time datetime="2023-10-20">20 octobre 2023</time></small></p>
+
+        <div class="mousemove"></div>
+</footer>  
 </template>
 
-<style scoped>
-.item {
-  margin-top: 2rem;
-  display: flex;
-  position: relative;
-}
+<style>
+  /* Style pour la souris */
 
-.details {
-  flex: 1;
-  margin-left: 1rem;
-}
-
-i {
-  display: flex;
-  place-items: center;
-  place-content: center;
-  width: 32px;
-  height: 32px;
-
-  color: var(--color-text);
-}
-
-h3 {
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin-bottom: 0.4rem;
-  color: var(--color-heading);
-}
-
-@media (min-width: 1024px) {
-  .item {
-    margin-top: 0;
-    padding: 0.4rem 0 1rem calc(var(--section-gap) / 2);
-  }
-
-  i {
-    top: calc(50% - 25px);
-    left: -26px;
-    position: absolute;
-    border: 1px solid var(--color-border);
-    background: var(--color-background);
-    border-radius: 8px;
-    width: 50px;
+.mousemove {
     height: 50px;
-  }
-
-  .item:before {
-    content: ' ';
-    border-left: 1px solid var(--color-border);
+    width: 50px;
+    border: 2px solid rgb(12, 147, 156);
     position: absolute;
-    left: 0;
-    bottom: calc(50% + 25px);
-    height: calc(50% - 25px);
-  }
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    box-shadow: 0px 0px 30px rgb(12, 147, 156);
+    transition: 0.2s ease;
+    z-index: -1;
+}
 
-  .item:after {
-    content: ' ';
-    border-left: 1px solid var(--color-border);
-    position: absolute;
-    left: 0;
-    top: calc(50% + 25px);
-    height: calc(50% - 25px);
-  }
+/* Footer */
 
-  .item:first-of-type:before {
-    display: none;
-  }
+#footeritem {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 
-  .item:last-of-type:after {
-    display: none;
-  }
+footer {
+    background-color: rgb(12, 147, 156);
+    height: 150px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+footer img {
+    padding-top: 30px;
+    padding-left: 10px;
+}
+
+footer p {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
 }
 </style>
